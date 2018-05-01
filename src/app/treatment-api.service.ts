@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+
 import { TreatmentFacility } from './treatment-facility';
 import { Category } from './category';
 import { Service } from './service';
@@ -11,19 +14,19 @@ export class TreatmentApiService {
 
   constructor() { }
 
-  getCategories(): Category[] {
-    return CATEGORIES;
+  getCategories(): Observable<Category[]> {
+    return of(CATEGORIES);
   }
 
-  getServices(): Service[] {
-    return [];
+  getServices(): Observable<Service[]> {
+    return of([]);
   }
 
-  getServiceNames(): String[] {
-    return SERVICE_NAMES;
+  getServiceNames(): Observable<String[]> {
+    return of(SERVICE_NAMES);
   }
 
-  findTreatmentLocations(): TreatmentFacility[] {
-    return TREATMENT_FACILITIES;
+  findTreatmentLocations(): Observable<TreatmentFacility[]> {
+    return of(TREATMENT_FACILITIES);
   }
 }
