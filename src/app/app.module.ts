@@ -8,10 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TreatmentSearchComponent } from './treatment-search/treatment-search.component';
+import { TreatmentApiService } from './treatment-api.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TreatmentSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserAnimationsModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [TreatmentApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
